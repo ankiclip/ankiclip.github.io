@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li><a class="" href="../index.html">index</a></li>
+<li class="heading"><span>考研英语一</span></li>
+<ul>
+<li><a class="" href="2005.html">2005</a></li>
+<li><a class="" href="2006.html">2006</a></li>
+<li><a class="" href="2007.html">2007</a></li>
+<li><a class="" href="2008.html">2008</a></li>
+<li><a class="" href="2009.html">2009</a></li>
+<li><a class="" href="2010.html">2010</a></li>
+<li><a class="" href="2011.html">2011</a></li>
+<li><a class="" href="2012.html">2012</a></li>
+<li><a class="" href="2013.html">2013</a></li>
+<li><a class="" href="2014.html">2014</a></li>
+<li><a class="active" href="2015.html">2015</a></li>
+<li><a class="" href="2016.html">2016</a></li>
+<li><a class="" href="2019.html">2019</a></li>
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <h3 id="2015%E5%B9%B4%E5%85%A8%E5%9B%BD%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E5%85%A5%E5%AD%A6%E8%80%83%E8%AF%95%E8%8B%B1%E8%AF%AD%E4%B8%80%E8%AF%95%E9%A2%98%EF%BC%88%E4%B8%80%EF%BC%89">2015年全国硕士研究生入学考试英语一试题（一） <a class="heading-anchor-permalink" href="#2015%E5%B9%B4%E5%85%A8%E5%9B%BD%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E5%85%A5%E5%AD%A6%E8%80%83%E8%AF%95%E8%8B%B1%E8%AF%AD%E4%B8%80%E8%AF%95%E9%A2%98%EF%BC%88%E4%B8%80%EF%BC%89">#</a></h3>
+<p>Section I Use of English</p>
+<p>Directions:</p>
+<p>Read the following text. Choose the best word(s) for each numbered blank and mark A, B, C or D on ANSWER SHEET 1. (10 points)</p>
+<p>Though not biologically related, friends are as “related” as fourth cousins, sharing about 1% of genes. That is 1 a study,published from the University of California and Yale University in the Proceedings of the National Academy of Sciences, has 2 .</p>
+<p>The study is a genome-wide analysis conducted 3 1932 unique subjects which 4 pairs of unrelated friends and unrelated strangers. The same people were used in both 5.</p>
+<p>While 1% may seem 6 , it is not so to a geneticist. As co-author of the study James Fowler, professor of medical genetics at UC San Diego, says, “Most people do not even 7their fourth cousins but somehow manage to select as friends the people who 8 our kin.”</p>
+<p>The study 9 found that the genes for smell were something shared in friends but not genes for immunity. Why this similarity exists in smell genes is difficult to explain, for now. 10, as the team suggests, it draws us to similar environments but there is more 11 it. There could be many mechanisms working together that 12us in choosing genetically similar friends 13 “functional kinship” of being friends with 14 !</p>
+<p>One of the remarkable findings of the study was that the similar genes seem to be evolving 15 than other genes. Studying this could help 16 why human evolution picked pace in the last 30,000 years, with social environment being a major 17 factor.</p>
+<p>The findings do not simply explain people’s 18to befriend those of similar  19 backgrounds, say the researchers. Though all the subjects were drawn from a population of European extraction, care was taken to 20that all subjects, friends and strangers were taken from the same population.</p>
+<p>1.[A] when	[B] why	[C] how	[D] what</p>
+<p>2.[A] defended	[B] concluded	[C] withdrawn	[D] advised</p>
+<p>3.[A] for	[B] with	[C] on	[D] by</p>
+<p>4.[A] compared	[B] sought	[C] separated	[D] connected</p>
+<p>5.[A] tests	[B] objects	[C] samples	[D] examples</p>
+<p>6.[A] insignificant	[B] unexpected	[C] unreliable	[D] incredible</p>
+<p>7.[A] visit	[B] miss	[C] seek	[D] know</p>
+<p>8.[A] resemble	[B] influence	[C] favor	[D] surpass</p>
+<p>9.[A] again	[B] also	[C] instead	[D] thus</p>
+<p>10.[A] Meanwhile	[B] Furthermore	[C] Likewise	[D] Perhaps</p>
+<p>11.[A] about	[B] to	[C] from	[D] like</p>
+<p>12.[A] drive	[B] observe	[C] confuse	[D] limit</p>
+<p>13.[A] according to	[B] rather than	[C] regardless of	[D] along with</p>
+<p>14.[A] chances	[B] responses	[C] missions	[D] benefits</p>
+<p>15.[A] later	[B] slower	[C] faster	[D] earlier</p>
+<p>16.[A] forecast	[B] remember	[C] understand	[D] express</p>
+<p>17.[A] unpredictable	[B] contributory	[C] controllable	[D] disruptive</p>
+<p>18.[A] endeavor	[B] decision	[C] arrangement	[D] tendency</p>
+<p>19.[A] political	[B] religious	[C] ethnic	[D] economic</p>
+<p>20.[A] see	[B] show	[C] prove	[D] tell</p>
+<p>Section ⅡReading Comprehension</p>
+<p>Part A</p>
+<p>Directions:</p>
+<p>Read the following four texts. Answer the questions below each text by choosing A, B, C or D. Mark your answers on the ANSWER SHEET 1. (40 points)</p>
+<p>Text1</p>
+<pre><code>King Juan Carlos of Spain once insisted “kings don’t abdicate, they die in their sleep.” But embarrassing scandals and the popularity of the republican left in the recent Euro-elections have forced him to eat his words and stand down. So, does the Spanish crisis suggest that monarchy is seeing its last days? Does that mean the writing is on the wall for all European royals, with their magnificent uniforms and majestic lifestyles?
+
+The Spanish case provides arguments both for and against monarchy. When public opinion is particularly polarised, as it was following the end of the Franco regime, monarchs can rise above “mere”politics and “embody” a spirit of national unity.
+
+ It is this apparent transcendence of politics that explains monarchs’ continuing popularity as heads of state. And so, the Middle East excepted, Europe is the most monarch-infested region in the world, with 10 kingdoms (not counting Vatican City and Andorra). But unlike their absolutist counterparts in the Gulf and Asia, most royal families have survived because they allow voters to avoid the difficult search for a non-controversial but respected public figure.
+
+Even so, kings and queens undoubtedly have a downside. Symbolic of national unity as they claim to be, their very history—and sometimes the way they behave today——embodies outdated and indefensible privileges and inequalities. At a time when Thomas Piketty and other economists are warning of rising inequality and the increasing power of inherited wealth, it is bizarre that wealthy aristocratic families should still be the symbolic heart of modern democratic states.
+
+The most successful monarchies strive to abandon or hide their old aristocratic ways. Princes and princesses have day-jobs and ride bicycles, not horses (or helicopters). Even so, these are wealthy families who party with the international 1%, and media intrusiveness makes it increasingly difficult to maintain the right image.
+
+While Europe’s monarchies will no doubt be smart enough to survive for some time to come, it is the British royals who have most to fear from the Spanish example.
+
+ It is only the Queen who has preserved the monarchy’s reputation with her rather ordinary (if well-heeled) granny style. The danger will come with Charles, who has both an expensive taste of lifestyle and a pretty hierarchical view of the world. He has failed to understand that monarchies have largely survived because they provide a service——as non-controversial and non-political heads of state. Charles ought to know that as English history shows, it is kings, not republicans, who are the monarchy’s worst enemies.
+</code></pre>
+<ol start="21">
+<li>According to the first two Paragraphs, King Juan Carlosof Spain________.</li>
+</ol>
+<p>[A] used to enjoy high public support	[B] was unpopular among European royals</p>
+<p>[C] eased his relationship with his rivals	[D] ended his reign in embarrassment</p>
+<ol start="22">
+<li>Monarchs are kept as heads of state in Europe mostly________.</li>
+</ol>
+<p>[A] owing to their undoubted and respectable status	[B] to achieve a balance between tradition and reality</p>
+<p>[C] to give voters more public figures to look up to	[D] due to their everlasting political embodiment</p>
+<ol start="23">
+<li>Which of the following is shown to be odd, according to Paragraph 4?</li>
+</ol>
+<p>[A] Aristocrats’ excessive reliance on inherited wealth.	[B] The role of the nobility in modern democracies.</p>
+<p>[C] The simple lifestyle of the aristocratic families.	[D] The nobility’s adherence to their privileges.</p>
+<ol start="24">
+<li>The British royals “have most to fear” because Charles________.</li>
+</ol>
+<p>[A] takes a rough line on political issues	[B] fails to change his lifestyle as advised</p>
+<p>[C] takes republicans as his potential allies	[D] fails to adapt himself to his future role</p>
+<ol start="25">
+<li>Which of the following is the best title of the text?</li>
+</ol>
+<p>[A] Carlos, Glory and Disgrace Combined	[B] Charles, Anxious to Succeed to the Throne</p>
+<p>[C] Carlos, a Lesson for All European Monarchs	[D] Charles, Slow to React to the Coming Threats</p>
+<p>Text2</p>
+<p>Just how much does the Constitution protect your digital data? The Supreme Court will now consider whether police can search the contents of a mobile phone without a warrant if the phone is on or around a person during an arrest.</p>
+<p>California has asked the justices to refrain from a sweeping ruling, particularly one that upsets the old assumption that authorities may search through the possessions of suspects at the time of their arrest. It is hard, the state argues, for judges to assess the implications of new and rapidly changing technologies.</p>
+<p>The court would be recklessly modest if it followed California’s advice. Enough of the implications are discernable, even obvious, so that the justices can and should provide updated guidelines to police,lawyers and defendants.</p>
+<p>They should start by discarding California’s lame argument that exploring the contents of a smartphone — a vast storehouse of digital information — is similar to, say, going through a suspect’s purse. The court has ruled that police don’t violate the Fourth Amendment when they go through the wallet or pocketbook of an arrestee without a warrant. But exploring one’s smartphone is more like entering his or her home. A smartphone may contain an arrestee’s reading history, financial history, medical history and comprehensive records of recent correspondence. The development of “cloud computing,” meanwhile, has made that exploration so much the easier.</p>
+<p>Americans should take steps to protect their digital privacy. But keeping sensitive information on these devices is increasingly a requirement of normal life. Citizens still have a right to expect private documents to remain private and protected by the Constitution’s prohibition on unreasonable searches.</p>
+<p>As so often is the case, stating that principle doesn’t ease the challenge of line-drawing. In many cases, it would not be overly burdensome for authorities to obtain a warrant to search through phone contents. They could still invalidate Fourth Amendment protections when facing severe,urgent circumstances, and they could take reasonable measures to ensure that phone data are not erased or altered while waiting for a warrant. The court, though, may want to allow room for police to cite situations where they are entitled to more freedom.</p>
+<pre><code>But the justices should not swallow California’s argument whole. New, disruptive technology sometimes demands novel applications of the Constitution’s protections. Orin Kerr, a law professor, compares the explosion and accessibility of digital information in the 21st century with the establishment of automobile use as a virtual necessity of life in the 20th: The justices had to specify novel rules for the new personal domain of the passenger car then; they must sort out how the Fourth Amendment applies to digital information now.	
+</code></pre>
+<ol start="26">
+<li>The Supreme Court will work out whether, during an arrest, it is legitimate to______.</li>
+</ol>
+<p>[A] prevent suspects from deleting their phone contents</p>
+<p>[B] search for suspects’ mobile phones without a warrant</p>
+<p>[C] check suspects’ phone contents without being authorized</p>
+<p>[D] prohibit suspects from using their mobile phones</p>
+<ol start="27">
+<li>The author’s attitude toward California’s argument is one of________.</li>
+</ol>
+<p>[A] disapproval         [B] indifference        [C] tolerance         [D] cautiousness</p>
+<ol start="28">
+<li>The author believes that exploring one’s phone contents is comparable to________.</li>
+</ol>
+<p>[A] getting into one’s residence	[B] handling one’s historical records</p>
+<p>[C] scanning one’s correspondences	[D] going through one’s wallet</p>
+<ol start="29">
+<li>In Paragraph 5 and 6, the author shows his concern that________.</li>
+</ol>
+<p>[A] principles are hard to be clearly expressed     	 [B] the court is giving police less room for action</p>
+<p>[C] citizens’ privacy is not effectively protected    	 [D] phones are used to store sensitive information</p>
+<ol start="30">
+<li>Orin Kerr’s comparison is quoted to indicate that________.</li>
+</ol>
+<p>[A] the Constitution should be implemented flexibly</p>
+<p>[B] new technology requires reinterpretation of the Constitution</p>
+<p>[C] California’s argument violates principles of the Constitution</p>
+<p>[D] principles of the Constitution should never be altered</p>
+<p>Text3</p>
+<pre><code>The journal Science is adding an extra round of statistical checks to its peer-review process, editor-in-chief Marcia McNutt announced today. The policy follows similar efforts from other journals, after widespread concern that basic mistakes in data analysis are contributing to the irreproducibility of many published research findings.
+
+“Readers must have confidence in the conclusions published in our journal,” writes McNutt in an editorial. Working with the American Statistical Association, the journal has appointed seven experts to a statistic board of reviewing editors (SBoRE). Manuscript will be flagged up for additional scrutiny by the journal’s internal editors, or by its existing Board of Reviewing Editors or by outside peer reviewers. The SBoRE panel will then find external statisticians to review these manuscripts.
+
+Asked whether any particular papers had impelled the change, McNutt said: “The creation of the ‘statistics board’ was motivated by concerns broadly with the application of statistics and data analysis in scientific research and is part of Science’s overall drive to increase reproducibility in the research we publish.”
+</code></pre>
+<p>Giovanni Parmigiani, a biostatistician at the Harvard School of Public Health, a member of the SBoRE group, says he expects the board to “play primarily an advisory role.” He agreed to join because he “found the foresight behind the establishment of the SBoRE to be novel, unique and likely to have a lasting impact. This impact will not only be through the publications in Science itself, but hopefully through a larger group of publishing places that may want to model their approach after Science.”</p>
+<p>John Ioannidis, a physician who studies research methodology, says that the policy is “a most welcome step forward” and “long overdue.” “Most journals are weak in statistical review, and this damages the quality of what they publish. I think that, for the majority of scientific papers nowadays, statistical review is more essential than expert review,” he says. But he noted that biomedical journals such as Annals of Internal Medicine, the Journal of the American Medical Association and The Lancet pay strong attention to statistical review.</p>
+<p>Professional scientists are expected to know how to analyze data, but statistical errors are alarmingly common in published research, according to David Vaux, a cell biologist. Researchers should improve their standards, he wrote in 2012, but journals should also take a tougher line, “engaging reviewers who are statistically literate and editors who can verify the process.” Vaux says that Science’s idea to pass some papers to statisticians “has some merit, but a weakness is that it relies on the board of reviewing editors to identify ‘the papers that need scrutiny’ in the first place”.</p>
+<ol start="31">
+<li>It can be learned from Paragraph 1 that________.</li>
+</ol>
+<p>[A] Science intends to simplify its peer-review process	[B] journals are strengthening their statistical checks</p>
+<p>[C] few journals are blamed for mistakes in data analysis	[D] lack of data analysis is common in research projects</p>
+<ol start="32">
+<li>The phrase “flagged up” (Para. 2) is the closest in meaning to________.</li>
+</ol>
+<p>[A] found      [B] marked     [C] revised     [D] stored</p>
+<ol start="33">
+<li>Giovanni Parmigiani believes that the establishment of the SBoRE may________.</li>
+</ol>
+<p>[A] pose a threat to all its peers           	[B] meet with strong opposition</p>
+<p>[C] increase Science’s circulation         	[D] set an example for other journals</p>
+<ol start="34">
+<li>David Vaux holds that what Science is doing now________.</li>
+</ol>
+<p>[A] adds to researchers’ workload         	[B] diminishes the role of reviewers</p>
+<p>[C] has room for further improvement      	[D] is to fail in the foreseeable future</p>
+<ol start="35">
+<li>Which of the following is the best title of the text?</li>
+</ol>
+<p>[A] Science Joins Push to Screen Statistics in Papers	[B] Professional Statisticians Deserve More Respect</p>
+<p>[C] Data Analysis Finds Its Way onto Editors’ Desks	[D] Statisticians Are Coming Back with Science</p>
+<p>Text4</p>
+<p>Two years ago, Rupert Murdoch’s daughter, Elisabeth, spoke of the “unsettling dearth of integrity across so many of our institutions.” Integrity had collapsed, she argued, because of a collective acceptance that the only “sorting mechanism” in society should be profit and the market. But “it’s us, human beings, we the people who create the society we want, not profit.”</p>
+<p>Driving her point home, she continued: “It’s increasingly apparent that the absence of purpose, of a moral language within government, media or business could become one of the most dangerous goals for capitalism and freedom.” This same absence of moral purpose was wounding companies such as News International, she thought, making it more likely that it would lose its way as it had with widespread illegal telephone hacking .</p>
+<p>As the hacking trial concludes——finding guilty one ex-editor of the News of the World, Andy Coulson, for conspiring to hack phones, and finding his predecessor, Rebekah Brooks, innocent of the same charge —the wider issue of dearth of integrity still stands.Journalists are known to have hacked the phones of up to 5,500 people. This is hacking on an industrial scale, as was acknowledged by Glenn Mulcaire, the man hired by the News of the World in 2001 to be the point person for phone hacking. Others await trial. This long story still unfolds.</p>
+<p>In many respects, the dearth of moral purpose frames not only the fact of such widespread phone hacking but the terms on which the trial took place. One of the astonishing revelations was how little Rebekah Brooks knew of what went on in her newsroom, how little she thought to ask and the fact that she never inquired how the stories arrived. The core of her successful defence was that she knew nothing.</p>
+<p>In today’s world, it has become normal that well-paid executives should not be accountable for what happens in the organizations that they run. Perhaps we should not be so surprised. For a generation, the collective doctrine has been that the sorting mechanism of society should be profit. The words that have mattered are efficiency, flexibility, shareholder value, business–friendly, wealth generation, sales, impact and, in newspapers, circulation. Words degraded to the margin have been justice, fairness, tolerance, proportionality and accountability.</p>
+<p>The purpose of editing the News of the World was not to promote reader understanding, to be fair in what was written or to betray any common humanity. It was to ruin lives in the quest for circulation and impact. Ms Brooks may or may not have had suspicions about how her journalists got their stories, but she asked no questions, gave no instructions—nor received traceable, recorded answers.</p>
+<ol start="36">
+<li>According to the first two paragraphs, Elisabeth was upset by________.</li>
+</ol>
+<p>[A] the consequences of the current sorting mechanism</p>
+<p>[B] companies’ financial loss due to immoral practices</p>
+<p>[C] governmental ineffectiveness on moral issues</p>
+<p>[D] the wide misuse of integrity among institutions</p>
+<ol start="37">
+<li>It can be inferred from Paragraph 3 that________.</li>
+</ol>
+<p>[A] Glem Mulcaire may deny phone hacking as a crime</p>
+<p>[B] more journalists may be found guilty of phone hacking</p>
+<p>[C] Andy Coulson should be held innocent of the charge</p>
+<p>[D] phone hacking will be accepted on certain occasions</p>
+<ol start="38">
+<li>The author believes the Rebekah Books’s defence________.</li>
+</ol>
+<p>[A] revealed a cunning personality       	[B] centered on trivial issues</p>
+<p>[C] was hardly convincing              	[D] was part of a conspiracy</p>
+<ol start="39">
+<li>The author holds that the current collective doctrine shows________.</li>
+</ol>
+<p>[A] generally distorted values           	[B] unfair wealth distribution</p>
+<p>[C] a marginalized lifestyle             	[D] a rigid moral code</p>
+<ol start="40">
+<li>Which of the following is suggested in the last paragraph?</li>
+</ol>
+<p>[A] The quality of writing is of primary importance.	[B] Common humanity is central to news reporting.</p>
+<p>[C] Moral awareness matters in editing a newspaper.	[D] Journalists need stricter industrial regulations.</p>
+<p>Part B</p>
+<p>Directions:</p>
+<p>In the following text, some sentences have been removed. For Questions 41-45, choose the most suitable one from the fist A-G to fit into each of the numbered blanks. There are two extra choices, which do not fit in any of the gaps. Mark your answers on ANSWER SHEET. (10 points)</p>
+<p>How does your reading proceed? Clearly you try to comprehend, in the sense of identifying meanings for individual words and working out relationships between them, drawing on your implicit knowledge of English grammar. (41) _______.You begin to infer a context for the text, for instance, by making decisions about what kind of speech event is involved. Who is making the utterance, to whom, when and where.</p>
+<p>The ways of reading indicated here are without doubt kinds of comprehension. But they show comprehension to consist not just of passive assimilation but of active engagement in inference and problem-solving. You infer information you feel the writer has invited you to grasp by presenting you with specific evidence and clues. (42) _______</p>
+<p>Conceived in this way, comprehension will not follow exactly the same track for each reader. What is in question is not the retrieval of an absolute, fixed or “true” meaning that can be read off and checked for accuracy, or some timeless relation of the text to the world. (43) _______</p>
+<p>Such background material inevitably reflects who we are. (44) _______.This doesn’t, however, make interpretation merely relative or even pointless. Precisely because readers from different historical periods, places and social experiences produce different but overlapping readings of the same words on the page—including for texts that engage with fundamental human concerns—debates about texts can play an important role in social discussion of beliefs and values.</p>
+<p>How we read a given text also depends to some extent on our particular interest in reading it. (45) _______. Such dimensions of reading suggest—as others introduced later in the book will also do—that we bring an implicit (often unacknowledged) agenda to any act of reading. It doesn’t then necessarily follow that one kind of reading is fuller, more advanced or more worthwhile than another. Ideally, different kinds of reading inform each other, and act as useful reference points for and counterbalances to one another. Together, they make up the reading component of your overall literacy, or relationship to your surrounding textual environment.</p>
+<p>[A] Are we studying that text and trying to respond in a way that fulfils the requirement of a given course? Reading it simply for pleasure? Skimming it for information? Ways of reading on a train or in bed are likely to differ considerably from reading in a seminar room.</p>
+<p>[B] Factors such as the place and period in which we are reading, our gender, ethnicity, age and social class will encourage us towards certain interpretations but at the same time obscure or even close off others.</p>
+<p>[C] If you are unfamiliar with words or idioms, you guess at their meaning, using clues presented in the context. On the assumption that they will become relevant later, you make a mental note of discourse entities as well as possible links between them.</p>
+<p>[D]In effect, you try to reconstruct the likely meanings or effects that any given sentence, image or reference might have had: These might be the ones the author intended.</p>
+<p>[E]You make further inferences, for instance, about how the text may be significant to you, or about its validity—inferences that form the basis of a personal response for which the author will inevitably be far less responsible.</p>
+<p>[F]In plays，novels and narrative poems, characters speak as constructs created by the author, not necessarily as mouthpieces for the author’s own thoughts.</p>
+<p>[G]Rather, we ascribe meanings to texts on the basis of interaction between what we might call textual and contextual material: between kinds of organization or patterning we perceive in a text’s formal structures (so especially its language structures) and various kinds of background, social knowledge, belief and attitude that we bring to the text.</p>
+<p>Part C</p>
+<p>Directions:</p>
+<p>Read the following text carefully and then translate the underlined segments into Chinese. Your translation should be written neatly on the ANSWER SHEET. (10 points)</p>
+<p>Within the span of a hundred years, in the seventeenth and early eighteenth centuries, a tide of emigration—one of the great folk wanderings of history—swept from Europe to America. (46) This movement, driven by powerful and diverse motivations, built a nation out of a wilderness and, by its nature, shaped the character and destiny of an uncharted continent.</p>
+<p>(47) The United States is the product of two principal forces—the immigration of European peoples with their varied ideas, customs, and national characteristics and the impact of a new country which modified these traits. Of necessity, colonial America was a projection of Europe. Across the Atlantic came successive groups of Englishmen, Frenchmen, Germans, Scots, Irishmen, Dutchmen, Swedes, and many others who attempted to transplant their habits and traditions to the new world. (48) But, the force of geographic conditions peculiar to America, the interplay of the varied national groups upon one another, and the sheer difficulty of maintaining old-world ways in a raw, new continent caused significant changes.These changes were gradual and at first scarcely visible. But the result was a new social pattern which, although it resembled European society in many ways, had a character that was distinctly American.</p>
+<p>(49) The first shiploads of immigrants bound for the territory which is now the United States crossed the Atlantic more than a hundred years after the 15th-and-16th-century explorations of North <a href="http://America.In">America.In</a> the meantime, thriving Spanish colonies had been established in</p>
+<p>Mexico, the West Indies, and South America. These travelers to North America came in small, unmercifully overcrowded craft. During their six- to twelve-week voyage, they survived on barely enough food allotted to them. Many of the ships were lost in storms, many passengers died of disease, and infants rarely survived the journey. Sometimes storms blew the vessels far off their course, and often calm brought unbearably long delay.</p>
+<p>To the anxious travelers the sight of the American shore brought almost inexpressible relief. Said one recorder of events, “The air at twelve leagues’ distance smelt as sweet as a new-blown garden.” The colonists’ first glimpse of the new land was a sight of dense woods. 50) The virgin forest with its richness and variety of trees was a real treasure-house which extended from Maine all the way down to Georgia. Here was abundant fuel and lumber. Here was the raw material of houses and furniture, ships and potash, dyes and naval stores.</p>
+<p>Section III Writing</p>
+<p>Part A</p>
+<p>51. Directions:</p>
+<p>You are going to host a club reading session. Write an email of about 100 words recommending a book to the club members.</p>
+<p>You should state reasons for your recommendation.</p>
+<p>You should write neatly on the ANSWER SHEET.</p>
+<p>Do not sign your own name at the end of the letter. Use Li Ming instead.</p>
+<p>Do not write the address. (10 points)</p>
+<p>Part B</p>
+<ol start="52">
+<li>Directions:</li>
+</ol>
+<p>Write an essay of 160-200 words based on the following drawing. In your essay you should</p>
+<ol>
+<li>
+<p>describe the drawing briefly</p>
+</li>
+<li>
+<p>explain its intended meaning, and</p>
+</li>
+<li>
+<p>give your comments</p>
+</li>
+</ol>
+<p>You should write neatly on the ANSWER SHEET. (20 points)</p>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>

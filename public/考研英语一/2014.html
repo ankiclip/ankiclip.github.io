@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li><a class="" href="../index.html">index</a></li>
+<li class="heading"><span>考研英语一</span></li>
+<ul>
+<li><a class="" href="2005.html">2005</a></li>
+<li><a class="" href="2006.html">2006</a></li>
+<li><a class="" href="2007.html">2007</a></li>
+<li><a class="" href="2008.html">2008</a></li>
+<li><a class="" href="2009.html">2009</a></li>
+<li><a class="" href="2010.html">2010</a></li>
+<li><a class="" href="2011.html">2011</a></li>
+<li><a class="" href="2012.html">2012</a></li>
+<li><a class="" href="2013.html">2013</a></li>
+<li><a class="active" href="2014.html">2014</a></li>
+<li><a class="" href="2015.html">2015</a></li>
+<li><a class="" href="2016.html">2016</a></li>
+<li><a class="" href="2019.html">2019</a></li>
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <h3 id="2014%E5%B9%B4%E5%85%A8%E5%9B%BD%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E5%85%A5%E5%AD%A6%E7%BB%9F%E4%B8%80%E8%80%83%E8%AF%95%E8%8B%B1%E8%AF%AD%EF%BC%88%E4%B8%80%EF%BC%89%E8%AF%95%E9%A2%98">2014年全国硕士研究生入学统一考试英语（一）试题 <a class="heading-anchor-permalink" href="#2014%E5%B9%B4%E5%85%A8%E5%9B%BD%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E5%85%A5%E5%AD%A6%E7%BB%9F%E4%B8%80%E8%80%83%E8%AF%95%E8%8B%B1%E8%AF%AD%EF%BC%88%E4%B8%80%EF%BC%89%E8%AF%95%E9%A2%98">#</a></h3>
+<p>Section Ⅰ Use of English</p>
+<p>Directions: Read the following text. Choose the best word(s) for each numbered blank and mark A, B, C or D on ANSWER SHEET 1. (10 points)</p>
+<p>As many people hit middle age, they often start to notice that their memory and mental clarity are not what they used to be. We suddenly can’t remember   1   we put the keys just a moment ago, or an old acquaintance’s name, or the name of an old band we used to love. As the brain    2   , we refer to these occurrences as “senior moments.”   3   seemingly innocent, this loss of mental focus can potentially have a(an)   4   impact on our professional, social, and personal   5   .</p>
+<p>Neuroscientists, experts who study the nervous system, are increasingly showing that there’s actually a lot that can be done. It   6   out that the brain needs exercise in much the same way our muscles do, and the right mental   7   can significantly improve our basic cognitive   8   . Thinking is essentially a   9   of making connections in the brain. To a certain extent, our ability to   10   in making the connections that drive intelligence is inherited.   11   , because these connections are made through effort and practice, scientists believe that intelligence can expand and fluctuate   12   mental effort.</p>
+<p>Now, a new Web-based company has taken it a step   13   and developed the first “brain training program” designed to actually help people improve and regain their mental   14   .</p>
+<p>The Web-based program   15   you to systematically improve your memory and attention skills. The program keeps   16   of your progress and provides detailed feedback   17   your performance and improvement. Most importantly, it    18   modifies and enhances the games you play to   19   on the strengths you are developing–much like a(n)   20   exercise routine requires you to increase resistance and vary your muscle use.</p>
+<p>1.[A] why	[B] when       	[C] that         	[D] where</p>
+<p>2.[A] improves	[B] fades       	[C] collapses    	[D] recovers</p>
+<p>3.[A] While	[B] Unless      	[C] Once      	[D] If</p>
+<p>4.[A] uneven	[B] limited      	[C] damaging    	[D] obscure</p>
+<p>5.[A] relationship	[B] environment 	[C] wellbeing   	[D] outlook</p>
+<p>6.[A] turns	[B] finds       	[C] points      	[D] figures</p>
+<p>7.[A] responses	[B] roundabouts  [C] workouts   	[D] associations</p>
+<p>8.[A] genre	[B] criterion     	[C] circumstances 	[D] functions</p>
+<p>9.[A] channel	[B] process      	[C] sequence    	[D] condition</p>
+<p>10.[A] excel	[B] feature      	[C] persist      	[D] believe</p>
+<p>11.[A] However 	[B] Moreover    	[C] Otherwise   	[D] Therefore</p>
+<p>12.[A] instead of	 [B] regardless of	[C] apart from   	[D] according to</p>
+<p>13.[A] back	[B] further     	[C] aside      	[D] around</p>
+<p>14.[A] framework 	[B] stability     	[C] sharpness  	[D] flexibility</p>
+<p>15.[A] hurries    	[B] reminds     	[C] forces     	[D] allows</p>
+<p>16.[A] order     	[B] track        	[C] hold      	[D] pace</p>
+<p>17.[A] to        	[B] on         	[C] for        	[D] with</p>
+<p>18.[A] constantly 	[B] habitually    	[C] irregularly  	[D] unusually</p>
+<p>19.[A] carry     	[B] put         	[C] build       	[D] take</p>
+<p>20.[A] risky     	[B] familiar     	[C] idle        	[D] effective</p>
+<p>Section Ⅱ Reading Comprehension</p>
+<p>Part A</p>
+<p>Directions：Read the following four texts. Answer the questions after each text by choosing A, B, C or D. Mark your answers on ANSWER SHEET 1. (40 points)</p>
+<p>Text 1</p>
+<p>In order to “change lives for the better” and reduce “dependency,” George Osbome, Chancellor of the Exchequer, introduced the “upfront work search” scheme. Only if the jobless arrive at the job centre with a CV register for online job search, and start looking for work will they be eligible for benefit-and then they should report weekly rather than fortnightly. What could be more reasonable?</p>
+<p>More apparent reasonableness followed. There will now be a seven-day wait for the jobseeker’s allowance. “Those first few days should be spent looking for work, not looking to sign on.” he claimed. “We’re doing these things because we know they help people say off benefits and help those on benefits get into work faster” Help? Really? On first hearing, this was the socially concerned chancellor, trying to change lives for the better, complete with “reforms” to an obviously indulgent system that demands too little effort from the newly unemployed to find work, and subsides laziness. What motivated him, we were to understand, was his zeal for “fundamental fairness”-protecting the taxpayer, controlling spending and ensuring that only the most deserving claimants received their benefits.</p>
+<p>Losing a job is hurting: you don’t skip down to the jobcentre with a song in your heart, delighted at the prospect of doubling your income from the generous state. It is financially terrifying psychologically embarrassing and you know that support is minimal and extraordinarily hard to get. You are now not wanted; you support is minimal and extraordinarily hard to get. You are now not wanted; you are now excluded from the work environment that offers purpose and structure in your life. Worse, the crucial income to feed yourself and your family and pay the bills has disappeared. Ask anyone newly unemployed what they want and the answer is always: a job.</p>
+<p>But in Osborneland, your first instinct is to fall into dependency- permanent dependency if you can get it-supported by a state only too ready to indulge your falsehood. It is as though 20 years of ever- tougher reforms of the job search and benefit administration system never happened. The principle of British welfare is no longer that you can insure yourself against the risk of unemployment and receive unconditional payments if the disaster happens. Even the very phrase ‘jobseeker’s allowance’-invented in 1996- is about redefining the unemployed as a “jobseeker” who had no mandatory right to a benefit he or she has earned through making national insurance contributions. Instead, the claimant receives a time-limited “allowance,” conditional on actively seeking a job; no entitlement and no insurance, at £71.70 a week, one of the least generous in the EU.</p>
+<p>21. George Osborne’s scheme was intended to _____.</p>
+<p>[A] motivate the unemployed to report voluntarily</p>
+<p>[B] provide the unemployed with easier access to benefits</p>
+<p>[C] encourage jobseekers’ active engagement in job seeking</p>
+<p>[D] guarantee jobseekers’ legitimate right to benefits</p>
+<ol start="22">
+<li>The phrase “to sign on” (Line 3, Para. 2) most probably means _____.</li>
+</ol>
+<p>[A] to register for an allowance from the government</p>
+<p>[B] to accept the government’s restrictions on the allowance</p>
+<p>[C] to check on the availability of jobs at the jobcentre</p>
+<p>[D] to attend a governmental job-training program</p>
+<ol start="23">
+<li>What prompted the chancellor to develop his scheme?</li>
+</ol>
+<p>[A] A desire to secure a better life for all.	[B] An eagerness to protect the unemployed.</p>
+<p>[C] An urge to be generous to the claimants.	[D] A passion to ensure fairness for taxpayers.</p>
+<ol start="24">
+<li>According to Paragraph 3, being unemployed makes one feel _____.</li>
+</ol>
+<p>[A] insulted   [B] uneasy   [C] enraged   [D] guilty</p>
+<ol start="25">
+<li>To which of the following would the author most probably agree?</li>
+</ol>
+<p>[A] Unemployment benefits should not be made conditional.</p>
+<p>[B] The British welfare system indulges jobseekers’ laziness.</p>
+<p>[C] The jobseekers’ allowance has met their actual needs.</p>
+<p>[D] Osborne’s reforms will reduce the risk of unemployment.</p>
+<p>Text 2</p>
+<p>All around the world, lawyers generate more hostility than the members of any other profession—with the possible exception of journalism. But there are few places where clients have more grounds for complaint than America.</p>
+<p>During the decade before the economic crisis, spending on legal services in America grew twice as fast as inflation. The best lawyers made skyscrapers-full of money, tempting ever more students to pile into law schools. But most law graduates never get a big-firm job. Many of them instead become the kind of nuisance-lawsuit filer that makes the tort system a costly nightmare.</p>
+<p>There are many reasons for this. One is the excessive costs of a legal education. There is just one path for a lawyer in most American states: a four-year undergraduate degree in some unrelated subject,then a three-year law degree at one of 200 law schools authorized by the American Bar Association and an expensive preparation for the bar exam. This leaves today’s average law-school graduate with $100,000 of debt on top of undergraduate debts. Law-school debt means that they have to work fearsomely hard.</p>
+<p>Reforming the system would help both lawyers and their customers. Sensible ideas have been around for a long time, but the state-level bodies that govern the profession have been too conservative to implement them. One idea is to allow people to study law as an undergraduate degree. Another is to let students sit for the bar after only two years of law school. If the bar exam is truly a stern enough test for a would-be lawyer, those who can sit it earlier should be allowed to do so. Students who do not need the extra training could cut their debt mountain by a third.</p>
+<p>The other reason why costs are so high is the restrictive guild-like ownership structure of the business. Except in the District of Columbia, non-lawyers may not own any share of a law firm. This keeps fees high and innovation slow. There is pressure for change from within the profession, but opponents of change among the regulators insist that keeping outsiders out of a law firm isolates lawyers from the pressure to make money rather than serve clients ethically.</p>
+<p>In fact, allowing non-lawyers to own shares in law firms would reduce costs and improve services to customers, by encouraging law firms to use technology and to employ professional managers to focus on improving firms’ efficiency. After all, other countries, such as Australia and Britain, have started liberalizing their legal professions. America should follow.</p>
+<ol start="26">
+<li>A lot of students take up law as their profession due to _____.</li>
+</ol>
+<p>[A] the growing demand from clients      	[B] the increasing pressure of inflation</p>
+<p>[C] the prospect of working in big firms    	[D] the attraction of financial rewards</p>
+<ol start="27">
+<li>Which of the following adds to the costs of legal education in most American states?</li>
+</ol>
+<p>[A] Higher tuition fees for undergraduate studies.	[B] Pursuing a bachelor’s degree in another major.</p>
+<p>[C] Admissions approval from the bar association.	[D] Receiving training by professional associations.</p>
+<ol start="28">
+<li>Hindrance to the reform of the legal system originates from _____.</li>
+</ol>
+<p>[A] non-professionals’ sharp criticism	[B] lawyers’ and clients’ strong resistance</p>
+<p>[C] the rigid bodies governing the profession	[D] the stern exam for would-be lawyers</p>
+<ol start="29">
+<li>The guild-like ownership structure is considered “restrictive” partly because it _____.</li>
+</ol>
+<p>[A] prevents lawyers from gaining due profits	[B] keeps lawyers from holding law-firm shares</p>
+<p>[C] aggravates the ethical situation in the trade	[D] bans outsiders’ involvement in the profession</p>
+<ol start="30">
+<li>In this text, the author mainly discusses _____.</li>
+</ol>
+<p>[A] flawed ownership of America’s law firms and its causes</p>
+<p>[B] the factors that help make a successful lawyer in America</p>
+<p>[C] a problem in America’s legal profession and solutions to it</p>
+<p>[D] the role of undergraduate studies in America’s legal education</p>
+<p>Text 3</p>
+<p>The US$3-million Fundamental physics prize is indeed an interesting experiment, as Alexander Polyakov said when he accepted this year’s award in March. And it is far from the only one of its type. As a News Feature article in Nature discusses, a string of lucrative awards for researchers have joined the Nobel Prizes in recent years. Many, like the Fundamental Physics Prize, are funded from the telephone-number-sized bank accounts of Internet entrepreneurs. These benefactors have succeeded in their chosen fields, they say, and they want to use their wealth to draw attention to those who have succeeded in science.</p>
+<p>What’s not to like? Quite a lot, according to a handful of scientists quoted in the News Feature. You cannot buy class, as the old saying goes, and these upstart entrepreneurs cannot buy their prizes the prestige of the Nobels. The new awards are an exercise in self-promotion for those behind them, say scientists. They could distort the achievement-based system of peer-review-led research. They could cement the status quo of peer-reviewed research. They do not fund peer-reviewed research. They perpetuate the myth of the lone genius.</p>
+<p>The goals of the prize-givers seem as scattered as the criticism. Some want to shock, others to draw people into science, or to better reward those who have made their careers in research.</p>
+<p>As Nature has pointed out before, there are some legitimate concerns about how science prizes—both new and old—are distributed. The Breakthrough Prize in Life Sciences, launched this year, takes an unrepresentative view of what the life sciences include. But the Nobel Foundation’s limit of three recipients per prize, each of whom must still be living, has long been outgrown by the collaborative nature of modern research—as will be demonstrated by the inevitable row over who is ignored when it comes to acknowledging the discovery of the Higgs boson. The Nobels were, of course, themselves set up by a very rich individual who had decided what he wanted to do with his own money. Time, rather than intention, has given them legitimacy.</p>
+<p>As much as some scientists may complain about the new awards, two things seem clear. First, most researchers would accept such a prize if they were offered one. Second, it is surely a good thing that the money and attention come to science rather than go elsewhere, It is fair to criticize and question the mechanism—that is the culture of research, after all—but it is the prize-givers’ money to do with as they please. It is wise to take such gifts with gratitude and grace.</p>
+<ol start="31">
+<li>The Fundamental Physics Prize is seen as _____.</li>
+</ol>
+<p>[A] a symbol of the entrepreneurs’ wealth	[B] a possible replacement of the Nobel Prizes</p>
+<p>[C] a handsome reward for researchers	[D] an example of bankers’ investments</p>
+<ol start="32">
+<li>The critics think that the new awards will most benefit _____.</li>
+</ol>
+<p>[A] the profit-oriented scientists          	[B] the founders of the awards</p>
+<p>[C] the achievement-based system        	[D] peer-review-led research</p>
+<ol start="33">
+<li>The discovery of the Higgs boson is a typical case which involves _____.</li>
+</ol>
+<p>[A] the joint effort of modern researchers   	[B] controversies over the recipients’ status</p>
+<p>[C] the demonstration of research findings  	[D] legitimate concerns over the new prizes</p>
+<p>34. According to Paragraph 4, which of the following is true of the Nobels?</p>
+<p>[A] History has never cast doubt on them.	[B] They are the most representative honor.</p>
+<p>[C] Their legitimacy has long been in dispute.	[D] Their endurance has done justice to them.</p>
+<ol start="35">
+<li>The author believes that the new awards are _____.</li>
+</ol>
+<p>[A] harmful to the culture of research   	[B] acceptable despite the criticism</p>
+<p>[C] subject to undesirable changes      	[D] unworthy of public attention</p>
+<p>Text 4</p>
+<p>“The Heart of the Matter,” the just-released report by the American Academy of Arts and Sciences (AAAS), deserves praise for affirming the importance of the humanities and social sciences to the prosperity and security of liberal democracy in America. Regrettably, however, the report’s failure to address the true nature of the crisis facing liberal education may cause more harm than good.</p>
+<p>In 2010, leading congressional Democrats and Republicans sent letters to the AAAS asking that it identify actions that could be taken by “federal, state and local governments, universities, foundations, educators, individual benefactors and others” to &quot;maintain national excellence in humanities and social scientific scholarship and education.&quot;In response, the American Academy formed the Commission on the Humanities and Social Sciences. Among the commission’s 51 members are top-tier-university presidents, scholars, lawyers, judges, and business executives, as well as prominent figures from diplomacy, filmmaking, music and journalism.</p>
+<p>The goals identified in the report are generally admirable. Because representative government presupposes an informed citizenry, the report supports full literacy; stresses the study of history and government, particularly American history and American government; and encourages the use of new digital technologies. To encourage innovation and competition, the report calls for increased investment in research, the crafting of coherent curricula that improve students’ ability to solve problems and communicate effectively in the 21st century, increased funding for teachers and the encouragement of scholars to bring their learning to bear on the great challenges of the day. The report also advocates greater study of foreign languages, international affairs and the expansion of study abroad programs.</p>
+<p>Unfortunately, despite 2½ years in the making, “The Heart of the Matter” never gets to the heart of the matter: the illiberal nature of liberal education at our leading colleges and universities. The commission ignores that for several decades America’s colleges and universities have produced graduates who don’t know the content and character of liberal education and are thus deprived of its benefits. Sadly, the spirit of inquiry once at home on campus has been replaced by the use of the humanities and social sciences as vehicles for publicizing “progressive,” or left-liberal propaganda.</p>
+<p>Today, professors routinely treat the progressive interpretation of history and progressive public policy as the proper subject of study while portraying conservative or classical liberal ideas—such as free markets or self-reliance —as falling outside the boundaries of routine, and sometimes legitimate, intellectual investigation.</p>
+<p>The AAAS displays great enthusiasm for liberal education. Yet its report may well set back reform by obscuring the depth and breadth of the challenge that Congress asked it to illuminate.</p>
+<p>36.According to Paragraph 1, what is the author’s attitude toward the AAAS’s report?</p>
+<p>[A] Critical      [B] Appreciative      [C] Contemptuous       [D] Tolerant</p>
+<ol start="37">
+<li>Influential figures in the Congress required that the AAAS report on how to _____.</li>
+</ol>
+<p>[A] safeguard individuals’ rights to education	[B] define the government’s role in education</p>
+<p>[C] retain people’s interest in liberal education	[D] keep a leading position in liberal education</p>
+<ol start="38">
+<li>According to Paragraph 3, the report suggests _____.</li>
+</ol>
+<p>[A] an exclusive study of American history	[B] a greater emphasis on theoretical subjects</p>
+<p>[C] the application of emerging technologies	[D] funding for the study of foreign languages</p>
+<ol start="39">
+<li>The author implies in Paragraph 5 that professors are _____.</li>
+</ol>
+<p>[A] supportive of free markets	[B] biased against classical liberal ideas</p>
+<p>[C] cautious about intellectual investigation	[D] conservative about public policy</p>
+<ol start="40">
+<li>Which of the following would be the best title for the text?</li>
+</ol>
+<p>[A] Illiberal Education and “The Heart of the Matter”	[B] The AAAS’s Contribution to Liberal Education</p>
+<p>[C] Ways to Grasp “The Heart of the Matter”	[D] Progressive Policy vs. Liberal Education</p>
+<p>Part B</p>
+<p>Directions：</p>
+<p>The following paragraphs are given in a wrong order. For Questions 41-45, you are required to reorganize into a coherent text by choosing from the list A-G and filling them into the numbered boxes .Paragraphs A and E have been correctly placed. Mark your answers on the ANSWER SHEET.（10 points）</p>
+<p>[A] Some archaeological sites have always been easily observable—for example, the Parthenon in Athens, Greece; the pyramids of Giza in Egypt; and the megaliths of Stonehenge in southern England. But these sites are exceptions to the norm .Most archaeological sites have been located by means of careful searching, while many others have been discovered by accident. Olduvai Gorge, fell into its deep valley in 1911.Thousands of Aztec artifacts came to light during the digging of the Mexico City subway in the 1970s.</p>
+<p>[B] In another case, American archaeologists Rene million and George Cowgill spent years systematically mapping the entire city of Teotihuacan in the valley of Mexico near what is now Mexico City .at its peak around AD 600, this city was one of the largest human settlements in the word. The researchers mapped not only the city’s vast and ornate ceremonial areas, but also hundreds of simpler apartment complexes where common people lived.</p>
+<p>[C] How do archaeologists know where to find what they are looking for when there is nothing visible on the surface of the ground? Typically, they survey and sample (make test excavations on) large areas of terrain to determine where excavation will yield useful information. Surveys and test samples have also become important for understanding the larger landscapes that contain archaeological sites.</p>
+<p>[D] Surveys can cover a single large settlement or entire landscapes. In one case, many researchers working around the ancient Maya city of Copán, Honduras, have located hundreds of small rural village and individual dwellings by using aerial photographs and by making surveys on foot. The resulting settlement maps show how the distribution and density of the rural population around the city changed dramatically between AD500 and 850, when Copán collapsed.</p>
+<p>[E] To find their sites, archaeologists today rely heavily on systematic survey methods and a variety of high-technology tools and techniques. Airborne technologies, such as different types of radar and photographic equipment carried by airplanes or spacecraft, allow archaeologists to learn about what lies beneath the ground without digging. Aerial surveys locate general areas of interest or larger buried features, such as ancient buildings or fields.</p>
+<p>[F] Most archaeological sites, however, are discovered by archaeologists who have set out to look for them. Such searches can take years. British archaeologist Howard Carter knew that the tomb of the Egyptian pharaoh Tutankhamen existed from information found in other sites. Carter sifted through rubble in the Valley of the King for seven years before he located the tomb in 1922. In the late 1800s British archaeologist Sir Arthur Eyan combed antique dealers’ stores in Athens, Greece. He was searching for thing engraved seals attributed to the ancient Mycenaean culture that dominated Greece from the 1400s to 1200s BC. Evas’s interpretations of those engravings eventually led them to find the Minoan palace at Knossos on the island of Crete, in 1900.</p>
+<p>[G] Ground surveys allow archaeologists to pinpoint the places where digs will be successful. Most ground surveys involve a lot of walking, looking for surface clues such as small fragments of pottery. They often include a certain amounts of digging to test for buried materials at selected points across a landscape. Archaeologists also may locate buried remains by using such technologies as ground radar, magnetic-field recording, and metal detector. Archaeologists commonly use computers to map sites and the landscapes around sites. Two and three-dimensional maps are helpful tools in planning excavations, illustrating how sites look, and presenting the results of archaeological research.</p>
+<p>41  — A  — 42. — E  —43  —   44 —   45</p>
+<p>Part C</p>
+<p>Directions:</p>
+<p>Read the following text carefully and then translate the underlined segments into Chinese. Your translation should be written on the ANSWER SHEET(10 points)</p>
+<p>Music means different things to different people and sometimes even different things to the same person at different moments of his life. It might be poetic, philosophical, sensual, or mathematical, but in any case it must, in my view, have something to do with the soul of the human being. Hence it is metaphysical; but the means of expression is purely and exclusively physical: sound. I believe it is precisely this permanent coexistence of metaphysical message through physical means that is the strength of music.46) It is also the reason why when we try to describe music with words, all we can do is articulate our reactions to it, and not grasp music itself.</p>
+<p>Beethoven’s importance in music has been principally defined by the revolutionary nature of his compositions. He freed music from hitherto prevailing conventions of harmony and structure. Sometimes I feel in his late works a will to break all signs of continuity. The music is abrupt and seemingly disconnected, as in the last piano sonata. In musical expression, he did not feel restrained by the weight of convention. 47) By all accounts he was a freethinking person, and a courageous one, and I find courage an essential quality for the understanding, let alone the performance, of his works.</p>
+<p>This courageous attitude in fact becomes a requirement for the performers of Beethoven’s music. His compositions demand the performer to show courage, for example in the use of dynamics. 48) Beethoven’s habit of increasing the volume with an extreme intensity and then abruptly following it with a sudden soft passage was only rarely used by composers before him.</p>
+<p>Beethoven was a deeply political man in the broadest sense of the word. He was not interested in daily politics, but concerned with questions of moral behavior and the larger questions of right and wrong affecting the entire society.49) Especially significant was his view of freedom, which, for him, was associated with the rights and responsibilities of the individual: he advocated freedom of thought and of personal expression.</p>
+<p>Beethoven’s music tends to move from chaos to order as if order were an imperative of human existence. For him, order does not result from forgetting or ignoring the disorders that plague our existence; order is a necessary development, an improvement that may lead to the Greek ideal of spiritual elevation. It is not by chance that the Funeral March is not the last movement of the Eroica Symphony, but the second, so that suffering does not have the last word. 50) One could interpret much of the work of Beethoven by saying that suffering is inevitable, but the courage to fight it renders life worth living.</p>
+<p>Section III    Writing</p>
+<p>Part A</p>
+<ol start="51">
+<li>Directions:</li>
+</ol>
+<p>Write a letter of about 100 words to the president of your university, suggesting how to improve students’ physical condition.</p>
+<p>You should include the details you think necessary.</p>
+<p>You should write neatly on the ANSWER SHEET.</p>
+<pre><code>Do not sign your own name at the end of the letter. Use “Li Ming” instead.
+
+Do not write the address.(10 points)
+</code></pre>
+<p>Part B</p>
+<ol start="52">
+<li>Directions:</li>
+</ol>
+<p>Write an essay of 160-200 words based on the following drawing. In your essay, you should</p>
+<p>1）describe the drawing briefly,</p>
+<p>2）interpret its intended meaning, and</p>
+<p>3）give your comments.</p>
+<p>You should write neatly on the ANSWER SHEET (20 points)</p>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>
